@@ -67,22 +67,23 @@ def starts_with_consonant? s
   end
 end
 
-#HELPER FUNCTION FOR THE BELOW FUNCTION
-def is_number? string
-true if Integer(string) rescue false
-end
 
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
-  if !is_number?(s)
-    return false
-  else
+  # YOUR CODE 
+  #check for binary
+  flag = false
+  if s.length == 0
+    flag = false
+  elsif s !~ /[^01]/
     if Integer(s).remainder(4) == 0
-      return true
+      flag =true
     else
-      return false
+      flag=false
     end
+  else
+    flag=false
   end
+  return flag
 end
 
 # Part 3
